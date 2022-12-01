@@ -1,4 +1,4 @@
-package lol.hub.aoc.y2022.tests.util;
+package lol.hub.aoc;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

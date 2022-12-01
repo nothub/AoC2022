@@ -1,9 +1,9 @@
-package lol.hub.aoc.y2022.tests;
+package lol.hub.aoc.y2021.tests;
 
-import lol.hub.aoc.y2022.day1.CalorieCounting2;
+import lol.hub.aoc.y2021.day1.SonarSweep1;
+import lol.hub.aoc.y2021.day1.SonarSweep2;
 import lol.hub.aoc.AssertWrapper;
 import lol.hub.aoc.InputParser;
-import lol.hub.aoc.y2022.day1.CalorieCounting1;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInfo;
@@ -12,22 +12,22 @@ import org.junit.jupiter.api.parallel.ExecutionMode;
 
 import java.util.List;
 
-@DisplayName("Day 1: Calorie Counting")
+@DisplayName("Day 1: Sonar Sweep")
 @Execution(ExecutionMode.CONCURRENT)
 class Day1Test {
 
-    private static final List<String> input = InputParser.stringList("inputs/2022/day1");
+    private static final List<Integer> input = InputParser.integerList("inputs/2021/day1");
 
     @Test
     @DisplayName("Part 1")
     void part1(TestInfo info) {
-        AssertWrapper.equals(72240, new CalorieCounting1().solve(input), info);
+        AssertWrapper.equals(1342, new SonarSweep1().solve(input), info);
     }
 
     @Test
     @DisplayName("Part 2")
     void part2(TestInfo info) {
-        AssertWrapper.equals(210957, new CalorieCounting2().solve(input), info);
+        AssertWrapper.equals(1378, new SonarSweep2().solve(input), info);
     }
 
 }

@@ -1,4 +1,4 @@
-package lol.hub.aoc.y2022.tests.util;
+package lol.hub.aoc;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.TestInfo;
