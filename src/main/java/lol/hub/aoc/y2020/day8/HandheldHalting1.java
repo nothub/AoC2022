@@ -9,9 +9,11 @@ import java.util.stream.Collectors;
 public class HandheldHalting1 implements Solver<List<String>, Integer> {
 
     protected static List<Instruction> parse(List<String> input) {
-        return input.stream().map(line -> line.split(" ")).map(result ->
-                new Instruction(Instruction.Operation.valueOf(result[0].toUpperCase()), Integer.parseInt(result[1]))
-        ).collect(Collectors.toList());
+        return input.stream()
+            .map(line -> line.split(" "))
+            .map(result ->
+                new Instruction(Instruction.Operation.valueOf(result[0].toUpperCase()), Integer.parseInt(result[1])))
+            .collect(Collectors.toList());
     }
 
     protected static Result execute(List<Instruction> program) {
@@ -25,18 +27,13 @@ public class HandheldHalting1 implements Solver<List<String>, Integer> {
                 ins.visited = true;
             }
             switch (ins.op) {
-                case ACC:
+                case ACC -> {
                     accu += ins.val;
                     head++;
-                    break;
-                case JMP:
-                    head += ins.val;
-                    break;
-                case NOP:
-                    head++;
-                    break;
-                default:
-                    throw new PuzzleException("Unknown operation: " + ins.op);
+                }
+                case JMP -> head += ins.val;
+                case NOP -> head++;
+                default -> throw new PuzzleException("Unknown operation: " + ins.op);
             }
         }
         return new Result(accu, true);
@@ -44,7 +41,7 @@ public class HandheldHalting1 implements Solver<List<String>, Integer> {
 
     @Override
     public Integer solve(List<String> input) {
-        return execute(parse(input)).val;
+        return execute(parse(input)).val();
     }
 
 }

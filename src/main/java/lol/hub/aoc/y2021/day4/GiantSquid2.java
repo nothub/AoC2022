@@ -3,8 +3,10 @@ package lol.hub.aoc.y2021.day4;
 import lol.hub.aoc.PuzzleException;
 import lol.hub.aoc.Solver;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 import static lol.hub.aoc.y2021.day4.GiantSquid1.*;
 

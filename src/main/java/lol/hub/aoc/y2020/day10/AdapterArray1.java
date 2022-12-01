@@ -3,13 +3,12 @@ package lol.hub.aoc.y2020.day10;
 import lol.hub.aoc.Solver;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class AdapterArray1 implements Solver<List<Integer>, Integer> {
 
     @Override
     public Integer solve(List<Integer> input) {
-        List<Integer> sorted = input.stream().sorted().collect(Collectors.toList());
+        List<Integer> sorted = input.stream().sorted().toList();
         int diff1 = 1;
         int diff3 = 1;
         for (int i = 1; i < sorted.size(); i++) {

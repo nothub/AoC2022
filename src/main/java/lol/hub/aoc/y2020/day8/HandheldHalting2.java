@@ -13,15 +13,14 @@ import static lol.hub.aoc.y2020.day8.Instruction.Operation.ACC;
 public class HandheldHalting2 implements Solver<List<String>, Integer> {
 
     private static Integer bruteforce(List<Instruction> broken) {
-        return IntStream.range(0, broken.size()).filter(i ->
-                !broken.get(i).op.equals(ACC)
-        ).boxed().map(i ->
-                executePatched(broken, i)
-        ).filter(result ->
-                result.halted
-        ).mapToInt(result ->
-                result.val
-        ).findAny().orElseThrow(() -> new PuzzleException("No result found"));
+        return IntStream.range(0, broken.size())
+            .filter(i -> !broken.get(i).op.equals(ACC))
+            .boxed()
+            .map(i -> executePatched(broken, i))
+            .filter(Result::halted)
+            .mapToInt(Result::val)
+            .findAny()
+            .orElseThrow(() -> new PuzzleException("No result found"));
     }
 
     private static Result executePatched(List<Instruction> program, int i) {

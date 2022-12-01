@@ -4,7 +4,6 @@ import lol.hub.aoc.Solver;
 
 import java.util.AbstractMap;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import static lol.hub.aoc.y2020.day3.TobogganTrajectory1.TREE;
@@ -34,7 +33,7 @@ public class TobogganTrajectory2 implements Solver<List<String>, Integer> {
         var trees = 0;
         var offset = 0;
 
-        for (var line : IntStream.range(0, input.size()).filter(i -> i % offsetV == 0).mapToObj(input::get).collect(Collectors.toList())) {
+        for (var line : IntStream.range(0, input.size()).filter(i -> i % offsetV == 0).mapToObj(input::get).toList()) {
             if (line.charAt(offset % line.length()) == TREE) {
                 trees++;
             }

@@ -8,13 +8,13 @@ import java.util.stream.IntStream;
 
 public class HydrothermalVenture1 implements Solver<List<String>, Integer> {
 
-    static final String seperator = " -> ";
+    static final String separator = " -> ";
 
     @Override
     public Integer solve(List<String> input) {
         int[][] grid = new int[1000][1000];
         for (String s : input) {
-            String[] raw = s.split(seperator);
+            String[] raw = s.split(separator);
             String[] xRaw = raw[0].split(",");
             int x1 = Integer.parseInt(xRaw[0]);
             int y1 = Integer.parseInt(xRaw[1]);
