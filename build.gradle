@@ -2,8 +2,8 @@ plugins {
     id 'java'
 }
 
-group = 'lol.hub.aoc.y2022'
-version = 1
+group = 'lol.hub.aoc'
+version = 2022
 
 repositories {
     mavenLocal()
