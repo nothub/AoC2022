@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+}
+
+group = 'lol.hub.aoc.y2022'
+version = 1
+
+repositories {
+    mavenLocal()
+    maven {
+        url = uri('https://repo.maven.apache.org/maven2/')
+    }
+}
+
+dependencies {
+    implementation group: 'org.tinylog', name: 'tinylog-api', version: '2.5.0'
+    implementation group: 'org.tinylog', name: 'tinylog-impl', version: '2.5.0'
+    testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.9.1'
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.9.1'
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(17)
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+test {
+    useJUnitPlatform()
+}

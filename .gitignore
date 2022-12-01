@@ -1,0 +1,17 @@
+*
+!*/
+
+!/src/**
+
+!/build.gradle
+!/settings.gradle
+!/gradle/wrapper/gradle-wrapper.jar
+!/gradle/wrapper/gradle-wrapper.properties
+!/gradlew
+!/gradlew.bat
+
+!/.editorconfig
+!/.gitattributes
+!/.gitignore
+
+!/.github/**/*.yaml
