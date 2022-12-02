@@ -2,7 +2,7 @@
 !*/
 
 !/src/**
-!/input.sh
+!/aoc.sh
 
 !/build.gradle
 !/settings.gradle
