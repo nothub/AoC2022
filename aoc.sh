@@ -9,8 +9,8 @@ usage() {
     echo "Fetch inputs and send answers for Advent of Code.
 
 Usage:
-  ${name} input  [-d=<day>] [-y=<year>] [-c=<cookie>] [<path>]
-  ${name} answer [-d=<day>] [-y=<year>] [-c=<cookie>] <level> <answer>
+  ${name} (input|inputs)   [-d=<day>] [-y=<year>] [-c=<cookie>] [<path>]
+  ${name} answer           [-d=<day>] [-y=<year>] [-c=<cookie>] <level> <answer>
 
 Options:
   -d    Day    [default: \$AOC_DAY or current day]
@@ -46,7 +46,7 @@ curl_flags+=("--header")
 curl_flags+=("cookie: session=${cookie}")
 
 case ${mode} in
-input)
+input | inputs)
     path="${1:-"src/test/resources/inputs/${year}/day${day}"}"
     echo >&2 "Downloading input file for ${year}/${day} to: ${path}"
     if [[ -f "${path}" ]]; then
