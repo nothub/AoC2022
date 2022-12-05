@@ -1,7 +1,7 @@
 package lol.hub.aoc.y2022.day3;
 
 import lol.hub.aoc.Solver;
-import lol.hub.aoc.util.Pair;
+import lol.hub.tuples.Pair;
 
 import java.util.List;
 
