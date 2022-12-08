@@ -44,6 +44,8 @@ curl_flags+=("--location")
 curl_flags+=("--no-progress-meter")
 curl_flags+=("--header")
 curl_flags+=("cookie: session=${cookie}")
+curl_flags+=("--user-agent")
+curl_flags+=("github.com/nothub/advent-of-code/blob/master/aoc.sh aoc@hub.lol")
 
 case ${mode} in
 input | inputs)
