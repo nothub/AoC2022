@@ -31,10 +31,10 @@ public class TreetopTreeHouse1 implements Solver<List<String>, Integer> {
     }
 
     static int[][] parse(List<String> input) {
-        int[][] forest = new int[input.size()][input.get(0).length()];
+        int[][] forest = new int[input.size()][input.size()];
 
         for (int i = 0; i < input.size(); i++) {
-            for (int j = 0; j < input.get(0).length(); j++) {
+            for (int j = 0; j < input.get(i).length(); j++) {
                 forest[i][j] = input.get(i).charAt(j) - 48;
             }
         }
